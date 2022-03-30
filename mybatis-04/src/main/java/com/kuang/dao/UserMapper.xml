@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kuang.dao.UserMapper">
+
+    <resultMap id="UserMap" type="User">
+
+        <result column="pwd" property="password"></result>
+    </resultMap>
+    <select id="getUserById"  resultMap="UserMap">
+        select  *  from mysqlstudy.user where id = #{id}
+    </select>
+    <select id="getUserByLimit" parameterType="map" resultType="user" resultMap="UserMap">
+        select * from mysqlstudy.user limit #{startIndex}, #{pageSize}
+    </select>
+    <select id="getUserByRowbounds"  resultMap="UserMap">
+        select * from mysqlstudy.user
+    </select>
+</mapper>
