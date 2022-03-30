@@ -9,5 +9,4 @@ public interface UserMapper {
 
     List<User> getUserByLimit(Map<String, Integer> map);
     User  getUserById(int id);
-    List<User> getUserByRowbounds();
 }
